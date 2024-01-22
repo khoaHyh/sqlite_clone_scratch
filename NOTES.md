@@ -13,7 +13,7 @@ Front-end consists of:
 
 * **tokenizer** - responsible for breaking down input SQL query into sequence of tokens. The tokenizer scans the input character by character and identifies
   keywords, identifiers, literals, and other syntactic elements. It outputs a stream of tokens that the parser will use.
-* **parser** - parser takes a stream of tokens and constructs a syntactic tree or parse tree. The parser enforces grammer rules of the SQL language. If the 
+* **parser** - takes a stream of tokens and constructs a syntactic tree or parse tree. The parser enforces grammer rules of the SQL language. If the 
   query is syntactically correct, the parser generates a parse tree that represents the query's structure
 * **code generator** - takes the parse tree and produces a set of instructions for the DB engine to
   follow in order to fulfill the query. The code generator transforms the parse tree into an intermediate presentation
