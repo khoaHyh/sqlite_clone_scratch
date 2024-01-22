@@ -1,9 +1,11 @@
 # Notes
 
-### Part 1
+### Part 1 - Introduction and Setting up REPL
 
 Used ChatGPT to understand what happens to the query input when it goes to the front-end. I summarized ChatGPT's output
 to help myself grasp the concepts learned.
+
+**REPL**: Read-Eval-Print-Loop
 
 * Front-end here refers to the user interface or application layer that enables users or other software to
   interact  with the SQLite database.
@@ -30,3 +32,4 @@ Back-end consists of:
   It also keeps a cache of recently-accessed pages in memory, and determines when those pages need to be written back to disk.
 * **os interface** - is the layer that differs depending on which operating system sqlite was compiled for. In this tutorial, I'm not going to 
   support multiple platforms.
+
