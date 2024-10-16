@@ -55,3 +55,27 @@ Here's some logic we added to our sqlite front-end:
 - pass the response of `prepare_statement` to `execute_statement` which will eventually become our VM
 
 We laid out some of the skeleton for the DB so far, in the next part we will implement `insert` and `select`.
+
+### Part 3 - An In-Memory, Append-Only, Single-Table Database
+
+To start small, here are some some limitations for our DB:
+
+- support two operations: inserting a row and printing all rows
+- reside only in memory (no persistence to disk)
+- support a single, hard-coded table
+
+We will upgrade `prepare_statement` to parse arguments and store those parsed arguments in a new `Row` data structure.
+
+We need to also copy that data into some data structure that represents a table. SQLite uses B-Tree for fast lookups, inserts and deletes. To
+simplify, we will arrange pages of data as an array.
+
+Plan:
+
+- store rows in blocks of memory called pages
+- each page stores as manuy rows as it can fit
+- rows are serialiazed into a compact representation with each page
+- Pages are only allocated as needed
+- Keep a fixed-size array of pointers to pages
+
+Page will be 4kb because that's the same size as a page used in virtual memory systems of most computer architectures. One page in our DB corresponds
+to one page used by the OS. The OS will move pages in an out of memory as whole units instead of breaking them up.
