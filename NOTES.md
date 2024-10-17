@@ -1,4 +1,4 @@
-# Notes
+Notes
 
 ### Part 1 - Introduction and Setting up REPL
 
@@ -79,3 +79,6 @@ Plan:
 
 Page will be 4kb because that's the same size as a page used in virtual memory systems of most computer architectures. One page in our DB corresponds
 to one page used by the OS. The OS will move pages in an out of memory as whole units instead of breaking them up.
+
+In this section we enable our clone to actually insert and save data into memory. We establish Row and Table structure and created some helper
+methods to handle data storage and retrieval.
